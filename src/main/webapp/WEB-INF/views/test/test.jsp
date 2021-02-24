@@ -27,7 +27,7 @@
 <body>
 	<h1>첫 테스트~~~</h1>
 	<c:forEach var="list" items="${map.list}">
-		
+		<p>${map.list }</p>
 	</c:forEach>
 </body>
 </html>
