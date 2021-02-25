@@ -26,8 +26,17 @@
 </head>
 <body>
 	<h1>첫 테스트~~~</h1>
-	<c:forEach var="list" items="${map.list}">
+	<table border="1">
+		<tbody>
+			<c:forEach var="list" items="${map.list}">
+				<tr>
+					<td>${list.member_no }</td>
+					<td>${list.member_name }</td>
+					<td>${list.member_id }</td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
 		
-	</c:forEach>
 </body>
 </html>
