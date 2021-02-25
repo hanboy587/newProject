@@ -18,7 +18,7 @@
 	<!-- 커넥션풀 DataSource 객체 -->
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/hsdb?characterEncoding=UTF-8" />
+		<property name="url" value="jdbc:mysql://localhost:3306/server?useSSL=false&amp;serverTimezone=Asia/Seoul" />
 		<property name="username" value="admin" />
 		<property name="password" value="admin1234" />
 
@@ -42,7 +42,7 @@
 	
 	
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
-  <constructor-arg index="0" ref="sqlSessionFactory" />
-</bean>
+ 	 <constructor-arg index="0" ref="sqlSessionFactory" />
+	</bean>
 		
 </beans>

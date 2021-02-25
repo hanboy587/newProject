@@ -21,19 +21,23 @@ public class TestContorller {
 	private TestService testService;
 	
 	@RequestMapping(value="/testList")
-	public Map<String, Object> Test(ModelAndView model) {
+	public ModelAndView Test() {
 		//controller에서 사용할 객체 선언부
+		ModelAndView mav = new ModelAndView();
 		TestVO test = new TestVO();
 		Map<String, Object> map = new HashMap<String,Object>();
+		System.out.println("testList 컨트롤러 실행!!!!!!!!!!!!!!!!!!!!!!!");
 		
 		//service에서 mybatis와 연동된 메서드를 가져와 map에 put
 		map.put("list", testService.testList(test));
 		
+		
 		//addObject("view단에서 접근할 이름", view단에 전달할 데이터)
 		//setViewName("데이터를 보낼 jsp 파일 이름")
-		model.addObject("map",map);
-		model.setViewName("test");
+		mav.addObject("map",map);
+		mav.setViewName("test");
 		
-		return map;
+		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!"+map.get("list"));
+		return mav;
 	}
 }
