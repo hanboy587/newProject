@@ -3,15 +3,7 @@
     pageEncoding="UTF-8"%>
 <%@ page session="false" %>
 <html>
-<meta charset="UTF-8">
 <head>
-	<title>Home</title>
+<link href="/resources/include/css/bootstrap.css" rel="stylesheet">
 </head>
-<body>
-<h1>
-	인코딩이 안돼
-</h1>
-
-<P>  The time on the server is ${serverTime}. </P>
-</body>
 </html>
