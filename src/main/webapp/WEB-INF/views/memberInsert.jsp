@@ -7,21 +7,36 @@
 <link rel="shortcut icon" href="/resources/image/icon.png"/>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="shortcut icon" href="/resources/image/icon.png" />
-<link rel="stylesheet"
-	href="/resources/include/dist/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="/resources/include/dist/css/bootstrap-theme.min.css">
-<script src="/resources/include/dist/js/bootstrap.min.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap"
-	rel="stylesheet">
-<script type="text/javascript"
-	src="/resources/include/js/jquery-1.12.4.min.js"></script>
-<script
-	src="/resources/include/dist/assets/js/ie-emulation-modes-warning.js"></script>
-<script
-   src="/resources/include/dist/assets/js/ie10-viewport-bug-workaround.js"></script>
-<script type="text/javascript" src="/resources/include/js/common.js"></script>
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script type="text/javascript">
+	$(function(){
+		$("#insertBtn").click(function(){
+			$.ajax({
+				async: false,
+				url: "/memberInsertPro",
+				dataType: "json",
+				data: $("#insertForm").serialize(),
+				type: "POST",
+				success:function(data){
+					console.log(data)
+					if(data.resultStr == "fail"){
+						alert("회원가입 실패");
+						return false;
+					}else{
+						if(confirm("회원가입 진짜 할거임?")==true){
+							alert("가입 ㅊㅋㅊㅋ");
+							return location.href="/testList"
+						}else{
+							return false;
+						}
+					}
+				}
+			})
+		})
+	})
+</script>
 </head>
 <body>
 	<div>
@@ -59,7 +74,7 @@
 				<tr>
 					<td>
 					<td align="right">
-					<input type="button" id="writeBtn" value="글쓰기">
+					<input type="button" id="insertBtn" value="완료">
 					<input type="button" value="다시쓰기" onclick="reset()">
 					<input type="button" value="취소" onclick="history.go(-1)">
 					&nbsp;&nbsp;&nbsp;

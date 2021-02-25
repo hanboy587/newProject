@@ -62,13 +62,14 @@ public class TestContorller {
 			//"resultStr" 키에 "success"를 담아 view로 전달(ajax 처리)
 			if(cnt > 0) {
 				map.put("testVO", testVO);
+				System.out.println("!!!!!!!!!!!"+map.get("testVO"));
 				map.put("resultStr", "success");
 			}else {
 			//실패 시 "fail" 전달(ajax 처리)
 				map.put("resultStr", "fail");
 			}
 		}catch(Exception e) {
-			map.put("resutStr", "fail");
+			map.put("resultStr", "fail");
 		}
 		return map;
 		

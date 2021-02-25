@@ -7,7 +7,7 @@
 	</select>
 	
 	<insert id="memberInsertPro" parameterType="com.spring.client.testVO.TestVO">
-		INSERT INTO MEMBER
-		VALUES(mysql시퀀스,#{member_name}, #{member_id}, #{member_passwd}, #{member_birthday}, #{member_phone})
+		INSERT INTO MEMBER(MEMBER_NAME, MEMBER_ID, MEMBER_PASSWD, MEMBER_BIRTHDAY, MEMBER_PHONE)
+		VALUES(#{member_name}, #{member_id}, #{member_passwd}, #{member_birthday}, #{member_phone})
 	</insert>
 </mapper>
