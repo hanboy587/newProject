@@ -18,4 +18,8 @@ public class TestService {
 	public List<String> testList(TestVO testVO){
 		return sqlSessionTemplate.selectList("testList");
 	}
+	
+	public int memberInsertPro(TestVO testVO) {
+		return sqlSessionTemplate.insert("memberInsertPro", testVO);
+	}
 }

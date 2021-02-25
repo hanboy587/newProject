@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.client.testService.TestService;
@@ -39,5 +40,38 @@ public class TestContorller {
 		
 		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!"+map.get("list"));
 		return mav;
+	}
+	
+	@RequestMapping(value="/memberInsert")
+	public Map<String, Object> memberInsert(){
+		Map<String, Object> map = new HashMap<>();
+		
+		return map;
+		
+	}
+	
+	@RequestMapping(value="/memberInsertPro")
+	@ResponseBody
+	public Map<String, Object> memberInsertPro(TestVO testVO){
+		Map<String, Object> map = new HashMap<>();
+		
+		try {
+			//service 메서드는 정상적으로 실행되면 1을 반환하므로
+			int cnt = testService.memberInsertPro(testVO);
+			//cnt가 0보다 크면 정상 실행 -> 입력 정보들을 저장
+			//"resultStr" 키에 "success"를 담아 view로 전달(ajax 처리)
+			if(cnt > 0) {
+				map.put("testVO", testVO);
+				System.out.println("!!!!!!!!!!!"+map.get("testVO"));
+				map.put("resultStr", "success");
+			}else {
+			//실패 시 "fail" 전달(ajax 처리)
+				map.put("resultStr", "fail");
+			}
+		}catch(Exception e) {
+			map.put("resultStr", "fail");
+		}
+		return map;
+		
 	}
 }
