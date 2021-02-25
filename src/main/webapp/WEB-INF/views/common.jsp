@@ -13,6 +13,5 @@
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
-<button onclick="location.href='/testList'">누구누구있음?</button>
 </body>
 </html>
