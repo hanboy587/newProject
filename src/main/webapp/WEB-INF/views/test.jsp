@@ -23,6 +23,10 @@
 <script
    src="/resources/include/dist/assets/js/ie10-viewport-bug-workaround.js"></script>
 <script type="text/javascript" src="/resources/include/js/common.js"></script>
+<script type="text/javascript">
+	$(function(){
+	})
+</script>
 </head>
 <body>
 	<h1>첫 테스트~~~</h1>
@@ -37,6 +41,6 @@
 			</c:forEach>
 		</tbody>
 	</table>
-		
+	<a href="/memberInsert">회원가입</a>
 </body>
 </html>
