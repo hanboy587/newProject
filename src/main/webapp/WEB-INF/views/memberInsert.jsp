@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ include file="common.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,50 +40,39 @@
 </script>
 </head>
 <body>
-	<div>
-		<h1>회원가입</h1>
-	</div>
-	<div style="width:650px;" align="right">
-		<a href="*">리스트로</a>
-	</div>
-	<hr style="width: 600px">
-	<form  id="testForm" >
-		<table border="1">
-			<tbody>
-				<tr>
-					<td style="width: 150px;"align="center">이름 :</td>
-					<td style="width: 400px;"><input type="text" name="member_name"/></td>
-				</tr>
-				<tr>
-					<td style="width: 150px;"align="center">아이디 :</td>
-					<td style="width: 400px;"><input type="text" name="member_id"/></td>
-				</tr>
-				<tr>
-					<td style="width: 150px;"align="center">비밀번호 :</td>
-					<td style="width: 400px;"><input type="text" name="member_passwd"/></td>
-				</tr>
-				<tr>
-					<td style="width: 150px;"align="center">생년월일 :</td>
-					<td style="width: 400px;"><input type="date" name="member_birthday"/></td>
-				</tr>
-				<tr>
-					<td style="width: 150px;"align="center">휴대폰 :</td>
-					<td style="width: 400px;"><input type="text" name="member_phone"/></td>
-				</tr>
-			</tbody>
-			<tfoot>
-				<tr>
-					<td>
-					<td align="right">
-					<input type="button" id="insertBtn" value="완료">
-					<input type="button" value="다시쓰기" onclick="reset()">
-					<input type="button" value="취소" onclick="history.go(-1)">
-					&nbsp;&nbsp;&nbsp;
-					</td>
-				</tr>
-			</tfoot>
-		</table>
-
+<div style="text-align:'center'; width:60%;">
+	<form id="testForm" class="form-group">
+		<table class="table table-hover">
+			<h1>회원가입</h1>
+				<tbody>
+					<tr class="table-light">
+						<td>이름 :</td>
+						<td><input type="text" name="member_name"/></td>
+					</tr>
+					<tr class="table-light">
+						<td>아이디 :</td>
+						<td><input type="text" name="member_id"/></td>
+					</tr>
+					<tr class="table-light">
+						<td>비밀번호 :</td>
+						<td><input type="text" name="member_passwd"/></td>
+					</tr>
+					<tr class="table-light">
+						<td>생년월일 :</td>
+						<td><input type="date" name="member_birthday"/></td>
+					</tr>
+					<tr class="table-light">
+						<td>휴대폰 :</td>
+						<td><input type="text" name="member_phone"/></td>
+					</tr>
+				</tbody>
+			</table>
+			<div>
+				<input type="button" class="btn btn-primary" id="insertBtn" value="완료">
+				<input type="button" class="btn btn-primary" value="다시쓰기" onclick="reset()">
+				<input type="button" class="btn btn-primary" value="취소" onclick="location.href='/'">
+			</div>
 	</form>
+</div>	
 </body>
 </html>
