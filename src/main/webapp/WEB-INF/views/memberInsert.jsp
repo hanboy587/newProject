@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="common.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,36 +40,36 @@
 </head>
 <body>
 <div style="text-align:'center'; width:60%;">
-	<form id="testForm" class="form-group">
-		<table class="table table-hover">
+	<form id="testForm">
+		<table>
 			<h1>회원가입</h1>
 				<tbody>
-					<tr class="table-light">
+					<tr>
 						<td>이름 :</td>
 						<td><input type="text" name="member_name"/></td>
 					</tr>
-					<tr class="table-light">
+					<tr>
 						<td>아이디 :</td>
 						<td><input type="text" name="member_id"/></td>
 					</tr>
-					<tr class="table-light">
+					<tr>
 						<td>비밀번호 :</td>
 						<td><input type="text" name="member_passwd"/></td>
 					</tr>
-					<tr class="table-light">
+					<tr>
 						<td>생년월일 :</td>
 						<td><input type="date" name="member_birthday"/></td>
 					</tr>
-					<tr class="table-light">
+					<tr>
 						<td>휴대폰 :</td>
 						<td><input type="text" name="member_phone"/></td>
 					</tr>
 				</tbody>
 			</table>
 			<div>
-				<input type="button" class="btn btn-primary" id="insertBtn" value="완료">
-				<input type="button" class="btn btn-primary" value="다시쓰기" onclick="reset()">
-				<input type="button" class="btn btn-primary" value="취소" onclick="location.href='/'">
+				<input type="button" id="insertBtn" value="완료">
+				<input type="button" value="다시쓰기" onclick="reset()">
+				<input type="button" value="취소" onclick="location.href='/'">
 			</div>
 	</form>
 </div>	
