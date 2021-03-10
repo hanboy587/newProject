@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.client.mapper">
+	
+	<select id="qnaList" resultType="com.spring.client.testVO.TestVO">
+		SELECT * FROM MEMBER
+	</select>
+	
+	<insert id="memberInsertPro" parameterType="com.spring.client.testVO.TestVO">
+		INSERT INTO MEMBER(MEMBER_NO, MEMBER_NAME, MEMBER_ID, MEMBER_PASSWD, MEMBER_BIRTHDAY, MEMBER_PHONE)
+		VALUES(#{member_name}, #{member_id}, #{member_passwd}, #{member_birthday}, #{member_phone})
+	</insert>
+</mapper>
