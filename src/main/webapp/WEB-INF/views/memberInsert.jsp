@@ -13,12 +13,15 @@
 <script type="text/javascript">
 	$(function(){
 		$("#insertBtn").click(function(){
+			console.log("insert jsp 값 확인 : " + $("#insertForm").serialize());
+			//유효성 검사 코드
+			
 			$.ajax({
 				async: false,
 				url: "/memberInsertPro",
 				dataType: "json",
 				data: $("#insertForm").serialize(),
-				type: "POST",
+				type: "GET",
 				success:function(data){
 					console.log(data)
 					if(data.resultStr == "fail"){
@@ -27,7 +30,7 @@
 					}else{
 						if(confirm("회원가입 진짜 할거임?")==true){
 							alert("가입 ㅊㅋㅊㅋ");
-							return location.href="/testList"
+							return location.href="/memberList"
 						}else{
 							return false;
 						}
@@ -40,7 +43,7 @@
 </head>
 <body>
 <div style="text-align:'center'; width:60%;">
-	<form id="testForm">
+	<form id="insertForm">
 		<table>
 			<h1>회원가입</h1>
 				<tbody>
@@ -58,11 +61,15 @@
 					</tr>
 					<tr>
 						<td>생년월일 :</td>
-						<td><input type="date" name="member_birthday"/></td>
+						<td><input type="date" name="member_birth"/></td>
 					</tr>
 					<tr>
 						<td>휴대폰 :</td>
 						<td><input type="text" name="member_phone"/></td>
+					</tr>
+					<tr>
+						<td>이메일 :</td>
+						<td><input type="text" name="member_email"/></td>
 					</tr>
 				</tbody>
 			</table>

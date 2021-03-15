@@ -1,18 +1,26 @@
-package com.spring.client.testVO;
+package com.spring.client.memberVO;
 
 import java.util.Date;
 
 import org.apache.ibatis.type.Alias;
 
-@Alias("test")
-public class TestVO {
+@Alias("member")
+public class MemberVO {
 	private int member_no;
 	private String member_name;
 	private String member_id;
 	private String member_passwd;
-	private Date member_birth;
+	private String member_birth;
 	private String member_phone;
+	private String member_email;
 	
+	
+	public String getMember_email() {
+		return member_email;
+	}
+	public void setMember_email(String member_email) {
+		this.member_email = member_email;
+	}
 	public String getMember_name() {
 		return member_name;
 	}
@@ -37,10 +45,10 @@ public class TestVO {
 	public void setMember_passwd(String member_passwd) {
 		this.member_passwd = member_passwd;
 	}
-	public Date getMember_birth() {
+	public String getMember_birth() {
 		return member_birth;
 	}
-	public void setMember_birth(Date member_birth) {
+	public void setMember_birth(String member_birth) {
 		this.member_birth = member_birth;
 	}
 	public String getMember_phone() {
