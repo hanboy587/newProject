@@ -13,6 +13,8 @@ public class MemberService {
 	
 	@Autowired
 	private SqlSessionTemplate sqlSessionTemplate;
+
+	private String pushTest2;
 	
 	public List<String> memberList(MemberVO memberVO){
 		return sqlSessionTemplate.selectList("memberList");
