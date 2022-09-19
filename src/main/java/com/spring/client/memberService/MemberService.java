@@ -15,7 +15,7 @@ public class MemberService {
 	private SqlSessionTemplate sqlSessionTemplate;
 
 	private String pushTest2;
-	private String pushTestOneMore16;
+	private String pushTestOneMore17;
 	
 	public List<String> memberList(MemberVO memberVO){
 		return sqlSessionTemplate.selectList("memberList");
